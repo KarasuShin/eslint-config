@@ -1,0 +1,27 @@
+{
+  "name": "@karasushin/eslint-config-typescript",
+  "version": "0.1.0",
+  "author": "Karasu Shin <karasu.shing@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0",
+    "typescript": ">=3.9"
+  },
+  "dependencies": {
+    "@karasushin/eslint-config-basic": "workspace:*",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "typescript": "^4.7.4"
+  }
+}
+

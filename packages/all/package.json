@@ -1,0 +1,20 @@
+{
+  "name": "@karasushin/eslint-config",
+  "version": "0.1.0",
+  "author": "Karasu Shin <karasu.shing@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "@karasushin/eslint-config-react": "workspace:*",
+    "@karasushin/eslint-config-vue": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
+  }
+}
