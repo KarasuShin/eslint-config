@@ -1,6 +1,6 @@
 {
   "name": "@karasushin/eslint-config-basic",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Karasu Shin <karasu.shing@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -8,7 +8,8 @@
   ],
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "standard.js"
   ],
   "peerDependencies": {
     "eslint": ">=7.4.0"
