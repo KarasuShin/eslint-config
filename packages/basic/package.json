@@ -1,6 +1,6 @@
 {
   "name": "@karasushin/eslint-config-basic",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Karasu Shin <karasu.shing@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -27,4 +27,3 @@
     "eslint": "^8.19.0"
   }
 }
-
