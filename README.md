@@ -4,8 +4,7 @@
 
 English / [简体中文](./README.zh-CN.md)
 
-**TIPS: @karasushin/eslint-config is for modern browsers, some rules will conflict with ie or other lower versions browsers** 
----
+**TIPS: @karasushin/eslint-config is for modern browsers, following rules will conflict with ie or other lower versions browsers** 
 
 ## Usage
 
