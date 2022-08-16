@@ -243,7 +243,7 @@ module.exports = {
     'promise/prefer-await-to-then': 'error',
     'import/default': 'error',
     'import/named': 'error',
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': 'off',
 
     'n/handle-callback-err': ['error', '^(err|error)'],
     'n/no-callback-literal': 'off',
