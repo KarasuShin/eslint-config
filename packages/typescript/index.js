@@ -30,6 +30,9 @@ module.exports = {
         parameters: 1,
         body: 1,
       },
+      ignoredNodes: [
+        'PropertyDefinition[decorators]',
+      ],
     }],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
