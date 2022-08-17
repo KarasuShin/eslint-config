@@ -3,6 +3,9 @@ module.exports = {
     'plugin:react/recommended',
     '@karasushin/eslint-config-typescript',
   ],
+  plugins: [
+    'react-hooks',
+  ],
   settings: {
     react: {
       version: '18.0',
@@ -14,5 +17,10 @@ module.exports = {
       'prefer-double',
     ],
     'react/react-in-jsx-scope': 'off',
+    'react/button-has-type': 'error',
+    'react/require-default-props': 'error',
+    'react/no-array-index-key': 'error',
+    'react/jsx-no-bind': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
   },
 }

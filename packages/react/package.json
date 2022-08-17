@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@karasushin/eslint-config-typescript": "workspace:*",
-    "eslint-plugin-react": "^7.30.1"
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "devDependencies": {
     "eslint": "^8.19.0",
