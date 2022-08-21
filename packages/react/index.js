@@ -20,7 +20,13 @@ module.exports = {
     'react/button-has-type': 'error',
     'react/require-default-props': 'error',
     'react/no-array-index-key': 'error',
-    'react/jsx-no-bind': 'warn',
+    'react/jsx-no-bind': ['error', {
+      ignoreRefs: true,
+      allowArrowFunctions: true,
+      allowFunctions: false,
+      allowBind: false,
+      ignoreDOMComponents: true,
+    }],
     'react-hooks/rules-of-hooks': 'error',
   },
 }
