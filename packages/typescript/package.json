@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@karasushin/eslint-config-basic": "workspace:*",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0"
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1"
   },
   "devDependencies": {
-    "eslint": "^8.19.0",
+    "eslint": "^8.22.0",
     "typescript": "^4.7.4"
   }
 }
