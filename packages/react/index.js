@@ -16,10 +16,8 @@ module.exports = {
       'error',
       'prefer-double',
     ],
-    'react/react-in-jsx-scope': 'off',
     'react/button-has-type': 'error',
-    'react/require-default-props': 'error',
-    'react/no-array-index-key': 'error',
+    'react/display-name': ['off', { ignoreTranspilerName: false }],
     'react/jsx-no-bind': ['error', {
       ignoreRefs: true,
       allowArrowFunctions: true,
@@ -27,6 +25,9 @@ module.exports = {
       allowBind: false,
       ignoreDOMComponents: true,
     }],
+    'react/no-array-index-key': 'error',
+    'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'error',
     'react-hooks/rules-of-hooks': 'error',
   },
 }
