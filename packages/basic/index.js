@@ -11,7 +11,7 @@ module.exports = {
   ],
   ignorePatterns: [
     '*.min.*', 'dist',
-    'packages-lock.json',
+    'package-lock.json',
     'yarn.lock',
     'pnpm-lock.yaml',
     'public',
