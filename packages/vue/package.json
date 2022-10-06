@@ -1,6 +1,6 @@
 {
   "name": "@karasushin/eslint-config-vue",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": "Karasu Shin <karasu.shing@gmail.com>",
   "license": "MIT",
   "keywords": [
