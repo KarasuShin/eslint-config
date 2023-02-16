@@ -27,7 +27,6 @@ module.exports = {
     }],
     'react/no-array-index-key': 'error',
     'react/react-in-jsx-scope': 'off',
-    'react/require-default-props': 'error',
     'react-hooks/rules-of-hooks': 'error',
   },
 }
