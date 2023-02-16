@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "eslint-plugin-html": "^7.1.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsonc": "^2.4.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsonc": "^2.6.0",
     "eslint-plugin-markdown": "^3.0.0",
-    "eslint-plugin-n": "^15.3.0",
-    "eslint-plugin-promise": "^6.0.1",
-    "eslint-plugin-unicorn": "^44.0.1",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^44.0.2",
     "jsonc-eslint-parser": "^2.1.0"
   },
   "devDependencies": {
-    "eslint": "^8.24.0"
+    "eslint": "^8.34.0"
   }
 }
