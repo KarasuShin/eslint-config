@@ -1,11 +1,21 @@
-module.exports = {
-  extends: [
-    'plugin:import/typescript',
-    'plugin:@typescript-eslint/recommended',
-    '@karasushin/eslint-config-basic',
-  ],
+import tsParser from '@typescript-eslint/parser'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+
+/** @type {import('eslint-define-config').FlatESLintConfigItem} */
+export const tsConfig = [{
+  files: ['**/*.ts', '**/*.tsx'],
+  languageOptions: {
+    parser: tsParser,
+    parserOptions: {
+      sourceType: 'module',
+    },
+  },
+  plugins: {
+    '@typescript-eslint': tsPlugin,
+  },
   rules: {
-    'import/named': 'off',
+    ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
+    ...tsPlugin.configs.strict.rules,
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
@@ -91,9 +101,14 @@ module.exports = {
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
   },
-  settings: {
-    'import/resolver': {
-      node: { extensions: ['.js', '.jsx', '.mjs', '.ts', '.tsx', '.d.ts'] },
-    },
+}, {
+  files: ['**/*.d.ts'],
+  rules: {
+    'import/no-duplicates': 'off',
   },
-}
+}, {
+  files: ['**/*.{test,spec}.ts?(x)'],
+  rules: {
+    'no-unused-expressions': 'off',
+  },
+}]

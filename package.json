@@ -1,18 +1,44 @@
 {
-  "name": "@karasushin/eslint-config-monorepo",
-  "version": "0.2.1",
+  "name": "@karasushin/eslint-config",
+  "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@7.9.0",
+  "type": "module",
+  "packageManager": "pnpm@8.6.7",
   "author": "Karasu Shin <karasu.shing@gmail.com>",
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
+    "build": "tsc -b packages/**/tsconfig.json",
+    "prepublish": "rimraf dist/* && shx cp src/* dist && shx cp package.json dist && npx json -I -f dist/package.json -e \"this.devDependencies=undefined; this.scripts=undefined; this.private=false;\"",
     "release": "bumpp package.json packages/*/package.json --commit --push --tag && pnpm -r publish --access public"
   },
   "devDependencies": {
-    "@karasushin/eslint-config": "*",
-    "bumpp": "^9.0.0",
-    "eslint": "^8.35.0",
-    "typescript": "^4.9.5"
+    "@types/node": "^18.14.2",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.44.0",
+    "eslint-define-config": "^1.21.0",
+    "json": "^11.0.0",
+    "rimraf": "^5.0.1",
+    "shx": "^0.3.4",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@eslint/js": "^8.44.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-unicorn": "^47.0.0",
+    "eslint-plugin-vue": "^9.15.1",
+    "globals": "^13.20.0",
+    "jsonc-eslint-parser": "^2.3.0",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
   }
 }
