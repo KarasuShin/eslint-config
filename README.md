@@ -4,8 +4,6 @@
 
 English / [简体中文](./README.zh-CN.md)
 
-**TIPS: @karasushin/eslint-config is for modern browsers, some rules will conflict with ie or other lower versions browsers** 
-
 ## Usage
 
 ### Install
@@ -14,12 +12,29 @@ English / [简体中文](./README.zh-CN.md)
 pnpm add -D eslint @karasushin/eslint-config
 ```
 
-Create an eslint config file in your project, then copy the following content into it:
+Create `eslint.config.js` in your project, then copy the following content into it:
 
-```json
-{
-  "extends": "@karasushin"
-}
+```js
+import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
+
+export default [
+  ...baseConfig,
+  ...reactConfig,
+  ...vueConfig
+]
+```
+
+you can add config for React or Vue.
+
+
+```js
+import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
+
+export default [
+  ...baseConfig,
+  ...reactConfig,
+  ...vueConfig
+]
 ```
 
 ### Add lint script
@@ -45,6 +60,7 @@ edit the `settings.json`
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "eslint.experimental.useFlatConfig": true,
 }
 ```

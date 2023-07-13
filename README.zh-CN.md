@@ -4,9 +4,6 @@
 
 [English](./README.md) / 简体中文
 
-**TIPS: @karasushin/eslint-config 面向现代浏览器, 其中一部分规则可能会与ie或其它低版本浏览器产生冲突** 
----
-
 ## 用法
 
 ### 安装
@@ -15,12 +12,26 @@
 pnpm add -D eslint @karasushin/eslint-config
 ```
 
-在你的项目下创建一个 eslint 配置文件, 复制以下内容到文件中:
+在你的项目下创建一个 `eslint.config.js`, 复制以下内容到文件中:
 
-```json
-{
-  "extends": "@karasushin"
-}
+```js
+import { baseConfig } from '@karasushin/eslint
+
+export default [
+  ...baseConfig,
+]
+```
+
+你也可以添加针对React或Vue的扩展规则
+
+```js
+import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
+
+export default [
+  ...baseConfig,
+  ...reactConfig,
+  ...vueConfig
+]
 ```
 
 ### 添加检查脚本
