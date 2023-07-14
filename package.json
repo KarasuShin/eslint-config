@@ -1,6 +1,6 @@
 {
   "name": "@karasushin/eslint-config",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "packageManager": "pnpm@8.6.7",
   "author": "Karasu Shin <karasu.shing@gmail.com>",
