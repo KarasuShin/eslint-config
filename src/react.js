@@ -17,6 +17,11 @@ export const reactConfig = [{
       sourceType: 'module',
     },
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   rules: {
     ...tsConfig[0].rules,
     ...reactPlugin.configs.recommended.rules,
