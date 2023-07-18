@@ -6,7 +6,8 @@
   "author": "Karasu Shin <karasu.shing@gmail.com>",
   "license": "MIT",
   "exports": {
-    "import": "./index.js"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "main": "./index.cjs",
   "module": "./index.js",
