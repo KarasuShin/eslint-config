@@ -14,6 +14,7 @@ export const tsConfig = [{
     '@typescript-eslint': tsPlugin,
   },
   rules: {
+    ...importRules,
     ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
     ...tsPlugin.configs.strict.rules,
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
