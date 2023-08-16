@@ -1,3 +1,4 @@
+import importPlugin from 'eslint-plugin-import'
 import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 
@@ -18,6 +19,7 @@ export const tsConfig = [{
   },
   plugins: {
     '@typescript-eslint': tsPlugin,
+    'import': importPlugin,
   },
   rules: {
     ...importRules,
