@@ -1,12 +1,5 @@
-import importPlugin from 'eslint-plugin-import'
 import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
-
-/** @type {import('eslint-define-config').Rules} */
-const importRules = {
-  'import/default': 'error',
-  'import/named': 'error',
-}
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem} */
 export const tsConfig = [{
@@ -19,10 +12,8 @@ export const tsConfig = [{
   },
   plugins: {
     '@typescript-eslint': tsPlugin,
-    'import': importPlugin,
   },
   rules: {
-    ...importRules,
     ...tsPlugin.configs['eslint-recommended'].overrides[0].rules,
     ...tsPlugin.configs.strict.rules,
     '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': 'allow-with-description' }],
@@ -109,11 +100,6 @@ export const tsConfig = [{
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/triple-slash-reference': 'off',
-  },
-}, {
-  files: ['**/*.d.ts'],
-  rules: {
-    'import/no-duplicates': 'off',
   },
 }, {
   files: ['**/*.{test,spec}.ts?(x)'],

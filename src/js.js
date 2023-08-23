@@ -241,7 +241,6 @@ const unusedImportsRules = {
 export const jsConfig = [
   js.configs.recommended,
   {
-    files: ['**/*.js', '**/*.jsx'],
     languageOptions: {
       globals: {
         ...globals.browser,
