@@ -3,6 +3,7 @@ import js from '@eslint/js'
 import importPlugin from 'eslint-plugin-import'
 import unicornPlugin from 'eslint-plugin-unicorn'
 import nPlugin from 'eslint-plugin-n'
+import unusedImportsPlugin from 'eslint-plugin-unused-imports'
 
 /** @type {import('eslint-define-config').Rules} */
 const baseRules = {
@@ -115,14 +116,7 @@ const baseRules = {
       allowTaggedTemplates: true,
     },
   ],
-  'no-unused-vars': [
-    'error', {
-      args: 'none',
-      caughtErrors: 'none',
-      ignoreRestSiblings: true,
-      vars: 'all',
-    },
-  ],
+  'no-unused-vars': 'off',
   'no-use-before-define': ['error', { functions: false, classes: false, variables: false }],
   'no-useless-call': 'error',
   'no-useless-computed-key': 'error',
@@ -234,6 +228,15 @@ const unicornRules = {
   'unicorn/throw-new-error': 'error',
 }
 
+/** @type {import('eslint-define-config').Rules} */
+const unusedImportsRules = {
+  'unused-imports/no-unused-imports': 'error',
+  'unused-imports/no-unused-vars': [
+    'error',
+    { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+  ],
+}
+
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
 export const jsConfig = [
   js.configs.recommended,
@@ -248,13 +251,15 @@ export const jsConfig = [
       sourceType: 'module',
     },
     plugins: {
-      import: importPlugin,
-      n: nPlugin,
-      unicorn: unicornPlugin,
+      'import': importPlugin,
+      'n': nPlugin,
+      'unicorn': unicornPlugin,
+      'unused-imports': unusedImportsPlugin,
     },
     rules: {
       ...baseRules,
       ...importRules,
+      ...unusedImportsRules,
       ...unicornRules,
       ...nRules,
     },
