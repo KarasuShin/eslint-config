@@ -15,10 +15,12 @@ pnpm add -D eslint @karasushin/eslint-config
 在你的项目下创建一个 `eslint.config.js`, 复制以下内容到文件中:
 
 ```js
-import { baseConfig } from '@karasushin/eslint
+import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
 
 export default [
   ...baseConfig,
+  ...reactConfig,
+  ...vueConfig
 ]
 ```
 
@@ -57,6 +59,7 @@ export default [
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "eslint.experimental.useFlatConfig": true,
 }
 ```

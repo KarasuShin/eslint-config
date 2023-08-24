@@ -26,7 +26,6 @@ export default [
 
 you can add config for React or Vue.
 
-
 ```js
 import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
 
