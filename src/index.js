@@ -3,6 +3,7 @@ import { tsConfig } from './typescript.js'
 import { mdConfig } from './md.js'
 import { jsonConfig, pkgConfig } from './json.js'
 import { nodeConfig } from './nodejs.js'
+import { importConfig } from './import.js'
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
 export const baseConfig = [
@@ -11,6 +12,7 @@ export const baseConfig = [
   mdConfig,
   jsonConfig,
   pkgConfig,
+  importConfig,
   ...nodeConfig,
 ]
 

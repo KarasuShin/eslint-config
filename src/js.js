@@ -1,9 +1,7 @@
 import globals from 'globals'
 import js from '@eslint/js'
-import importPlugin from 'eslint-plugin-import'
 import unicornPlugin from 'eslint-plugin-unicorn'
 import nPlugin from 'eslint-plugin-n'
-import unusedImportsPlugin from 'eslint-plugin-unused-imports'
 
 /** @type {import('eslint-define-config').Rules} */
 const baseRules = {
@@ -190,12 +188,6 @@ const baseRules = {
 }
 
 /** @type {import('eslint-define-config').Rules} */
-const importRules = {
-  'import/default': 'error',
-  'import/named': 'error',
-}
-
-/** @type {import('eslint-define-config').Rules} */
 const nRules = {
   'n/handle-callback-err': ['error', '^(err|error)'],
   'n/no-callback-literal': 'off',
@@ -228,15 +220,6 @@ const unicornRules = {
   'unicorn/throw-new-error': 'error',
 }
 
-/** @type {import('eslint-define-config').Rules} */
-const unusedImportsRules = {
-  'unused-imports/no-unused-imports': 'error',
-  'unused-imports/no-unused-vars': [
-    'error',
-    { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-  ],
-}
-
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
 export const jsConfig = [
   js.configs.recommended,
@@ -250,15 +233,11 @@ export const jsConfig = [
       sourceType: 'module',
     },
     plugins: {
-      'import': importPlugin,
-      'n': nPlugin,
-      'unicorn': unicornPlugin,
-      'unused-imports': unusedImportsPlugin,
+      n: nPlugin,
+      unicorn: unicornPlugin,
     },
     rules: {
       ...baseRules,
-      ...importRules,
-      ...unusedImportsRules,
       ...unicornRules,
       ...nRules,
     },
