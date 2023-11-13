@@ -28,5 +28,8 @@ export const vueConfig = [{
     ...vuePlugin.configs['vue3-essential'].rules,
     ...vuePlugin.configs['vue3-strongly-recommended'].rules,
     ...vuePlugin.configs['vue3-recommended'].rules,
+    'vue/block-order': ['error', { order: ['script', 'template', 'style'] }],
+    'vue/eqeqeq': ['error', 'smart'],
+    'vue/custom-event-name-casing': ['error', 'camelCase'],
   },
 }]
