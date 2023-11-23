@@ -2,9 +2,10 @@ import reactPlugin from 'eslint-plugin-react'
 import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import { tsConfig } from './typescript.js'
+import { baseConfig } from './index.js'
 
 /** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const reactConfig = [{
+export const reactConfig = [...baseConfig, {
   files: ['**/*.jsx', '**/*.tsx'],
   plugins: {
     'react': reactPlugin,
