@@ -1,17 +1,17 @@
 import jsonParser from 'jsonc-eslint-parser'
 import jsonPlugin from 'eslint-plugin-jsonc'
+import { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem} */
-export const jsonConfig = {
+export const jsonConfig: FlatESLintConfigItem = {
   files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
   plugins: {
-    jsonc: jsonPlugin,
+    jsonc: jsonPlugin as any,
   },
   languageOptions: {
     parser: jsonParser,
   },
   rules: {
-    ...jsonPlugin.configs['recommended-with-jsonc'],
+    ...jsonPlugin.configs['recommended-with-jsonc'].rules as Rules,
     'jsonc/array-bracket-spacing': ['error', 'never'],
     'jsonc/comma-dangle': ['error', 'never'],
     'jsonc/comma-style': ['error', 'last'],
@@ -23,11 +23,10 @@ export const jsonConfig = {
   },
 }
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem} */
-export const pkgConfig = {
+export const pkgConfig: FlatESLintConfigItem = {
   files: ['**/package.json'],
   plugins: {
-    jsonc: jsonPlugin,
+    jsonc: jsonPlugin as any,
   },
   languageOptions: {
     parser: jsonParser,

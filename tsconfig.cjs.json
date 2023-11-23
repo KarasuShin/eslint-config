@@ -1,0 +1,10 @@
+{
+  "extends": "@karasushin/tsconfig/lib",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "dist/cjs",
+    "rootDir": "src",
+    "declaration": true,
+    "declarationDir": "dist/types"
+  }
+}

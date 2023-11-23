@@ -1,10 +1,12 @@
 import globals from 'globals'
 import js from '@eslint/js'
+// @ts-ignore
 import unicornPlugin from 'eslint-plugin-unicorn'
+// @ts-ignore
 import nPlugin from 'eslint-plugin-n'
+import { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').Rules} */
-const baseRules = {
+const baseRules: Rules = {
   'accessor-pairs': ['error', { setWithoutGet: true, enforceForClassMembers: true }],
   'arrow-body-style': ['error', 'as-needed'],
   'array-bracket-newline': ['error', 'consistent'],
@@ -187,14 +189,12 @@ const baseRules = {
   'yoda': ['error', 'never'],
 }
 
-/** @type {import('eslint-define-config').Rules} */
-const nRules = {
+const nRules: Rules = {
   'n/handle-callback-err': ['error', '^(err|error)'],
   'n/no-callback-literal': 'off',
 }
 
-/** @type {import('eslint-define-config').Rules} */
-const unicornRules = {
+const unicornRules: Rules = {
   'unicorn/better-regex': ['error', { sortCharacterClasses: true }],
   'unicorn/catch-error-name': 'error',
   'unicorn/error-message': 'error',
@@ -220,8 +220,7 @@ const unicornRules = {
   'unicorn/throw-new-error': 'error',
 }
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const jsConfig = [
+export const jsConfig: FlatESLintConfigItem[] = [
   js.configs.recommended,
   {
     languageOptions: {

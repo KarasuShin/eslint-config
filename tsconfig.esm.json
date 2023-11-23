@@ -1,0 +1,10 @@
+{
+  "extends": "@karasushin/tsconfig/lib",
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "dist/esm",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "rootDir": "src"
+  }
+}

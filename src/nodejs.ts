@@ -1,5 +1,6 @@
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const nodeConfig = [{
+import { FlatESLintConfigItem } from "eslint-define-config";
+
+export const nodeConfig: FlatESLintConfigItem[] = [{
   files: ['**/scripts/*', '**/cli.*'],
   rules: {
     'no-console': 'off',

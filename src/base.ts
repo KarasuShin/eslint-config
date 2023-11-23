@@ -4,9 +4,9 @@ import { mdConfig } from './md.js'
 import { jsonConfig, pkgConfig } from './json.js'
 import { nodeConfig } from './nodejs.js'
 import { importConfig } from './import.js'
+import { FlatESLintConfigItem } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const baseConfig = [
+export const baseConfig: FlatESLintConfigItem[] = [
   ...jsConfig,
   ...tsConfig,
   mdConfig,
@@ -15,15 +15,3 @@ export const baseConfig = [
   importConfig,
   ...nodeConfig,
 ]
-
-export {
-  jsConfig,
-  tsConfig,
-  mdConfig,
-  jsonConfig,
-  pkgConfig,
-  nodeConfig,
-}
-
-export { reactConfig } from './react.js'
-export { vueConfig } from './vue.js'

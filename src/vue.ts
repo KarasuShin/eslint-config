@@ -1,10 +1,11 @@
+// @ts-ignore
 import vuePlugin from 'eslint-plugin-vue'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import vueParser from 'vue-eslint-parser'
 import { tsConfig } from './typescript.js'
+import { FlatESLintConfigItem } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem[]} */
-export const vueConfig = [{
+export const vueConfig: FlatESLintConfigItem = {
   files: ['**/*.vue'],
   plugins: {
     'vue': vuePlugin,
@@ -32,4 +33,4 @@ export const vueConfig = [{
     'vue/eqeqeq': ['error', 'smart'],
     'vue/custom-event-name-casing': ['error', 'camelCase'],
   },
-}]
+}

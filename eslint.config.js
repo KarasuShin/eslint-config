@@ -1,4 +1,4 @@
-import { baseConfig } from './dist/index.cjs'
+import { baseConfig } from './dist'
 
 export default [
   ...baseConfig,

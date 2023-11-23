@@ -1,8 +1,8 @@
 import mdPlugin from 'eslint-plugin-markdown'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
+import { FlatESLintConfigItem } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem} */
-export const mdConfig = {
+export const mdConfig: FlatESLintConfigItem = {
   files: ['**/*.md/*.*'],
   plugins: {
     'markdown': mdPlugin,

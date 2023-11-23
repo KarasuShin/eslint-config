@@ -1,8 +1,9 @@
+// @ts-ignore
 import tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
+import { FlatESLintConfigItem } from 'eslint-define-config'
 
-/** @type {import('eslint-define-config').FlatESLintConfigItem} */
-export const tsConfig = [{
+export const tsConfig: FlatESLintConfigItem[] = [{
   files: ['**/*.ts', '**/*.tsx'],
   languageOptions: {
     parser: tsParser,
