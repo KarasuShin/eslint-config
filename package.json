@@ -1,65 +1,69 @@
 {
   "name": "@karasushin/eslint-config",
   "version": "1.5.1",
+  "packageManager": "pnpm@8.12.0",
   "type": "module",
-  "packageManager": "pnpm@8.6.7",
-  "author": "Karasu Shin <karasu.shing@gmail.com>",
   "license": "MIT",
-  "exports": {
-    "import": "./esm/index.js",
-    "require": "./cjs/index.js",
-    "types": "./types/index.d.ts"
-  },
-  "main": "./cjs/index.cjs",
-  "module": "./esm/index.js",
-  "types": "./types/index.d.ts",
-  "scripts": {
-    "lint": "eslint .",
-    "build:pkg": "shx cp package.json dist && json -I -f dist/package.json -e \"this.devDependencies=undefined; this.scripts=undefined; this.private=false;\"",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build": "rimraf dist && npm run build:esm && npm run build:cjs && npm run build:pkg",
-    "release": "bumpp package.json --commit --push --tag && npm run build && npm run build:pkg && npm publish --npmrc ./dist --access public"
-  },
-  "devDependencies": {
-    "@karasushin/tsconfig": "^1.3.0",
-    "@types/eslint-plugin-markdown": "^2.0.2",
-    "@types/eslint__js": "^8.42.3",
-    "@types/node": "^18.18.9",
-    "bumpp": "^9.2.0",
-    "eslint": "^8.53.0",
-    "json": "^11.0.0",
-    "rimraf": "^5.0.5",
-    "shx": "^0.3.4",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "@eslint/js": "^8.53.0",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.12.0",
-    "eslint-define-config": "^1.24.1",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jsonc": "^2.10.0",
-    "eslint-plugin-markdown": "^3.0.1",
-    "eslint-plugin-n": "^16.3.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-unicorn": "^49.0.0",
-    "eslint-plugin-unused-imports": "^3.0.0",
-    "eslint-plugin-vue": "^9.18.1",
-    "globals": "^13.23.0",
-    "jsonc-eslint-parser": "^2.4.0",
-    "vue-eslint-parser": "^9.3.2"
-  },
-  "peerDependencies": {
-    "eslint": "^8.53.0"
+  "homepage": "https://github.com/KarasuShin/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/KarasuShin/eslint-config/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KarasuShin/eslint-config.git"
   },
-  "bugs": {
-    "url": "https://github.com/KarasuShin/eslint-config/issues"
+  "author": "Karasu Shin <karasu.shing@gmail.com>",
+  "files": [
+    "**"
+  ],
+  "main": "./index.js",
+  "module": "./index.js",
+  "types": "./types/index.d.ts",
+  "exports": {
+    "types": "./types/index.d.ts",
+    "require": "./index.cjs",
+    "import": "./index.js"
   },
-  "homepage": "https://github.com/KarasuShin/eslint-config#readme"
+  "scripts": {
+    "build": "rimraf dist && tsup && npm run build:dts && npm run copy",
+    "build:dts": "tsc -p tsconfig.dts.json",
+    "copy": "shx cp package.json dist && shx cp README*.md dist && json -I -f dist/package.json -e \"this.devDependencies=undefined; this.scripts=undefined;\"",
+    "lint": "eslint . --fix",
+    "release": "bumpp package.json --commit --push --tag && npm run build && npm publish --npmrc ./dist --access public"
+  },
+  "peerDependencies": {
+    "eslint": "^8.55.0"
+  },
+  "dependencies": {
+    "@stylistic/eslint-plugin-js": "^1.5.1",
+    "@stylistic/eslint-plugin-jsx": "^1.5.1",
+    "@stylistic/eslint-plugin-plus": "^1.5.1",
+    "@stylistic/eslint-plugin-ts": "^1.5.1",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint-define-config": "^2.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-i": "^2.29.0",
+    "eslint-plugin-jsonc": "^2.11.1",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-unicorn": "^49.0.0",
+    "globals": "^13.24.0",
+    "jsonc-eslint-parser": "^2.4.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.4.5",
+    "@karasushin/eslint-config": "^2.0.0",
+    "@karasushin/tsconfig": "^1.3.0",
+    "@types/node": "^18.18.9",
+    "bumpp": "^9.2.1",
+    "eslint": "^8.55.0",
+    "json": "^11.0.0",
+    "rimraf": "^5.0.5",
+    "shx": "^0.3.4",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
 }

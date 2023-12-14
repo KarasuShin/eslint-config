@@ -1,27 +1,50 @@
-import { jsConfig } from './js.js'
-import { tsConfig } from './typescript.js'
-import { mdConfig } from './md.js'
-import { jsonConfig, pkgConfig } from './json.js'
-import { nodeConfig } from './nodejs.js'
-import { importConfig } from './import.js'
-import { reactConfig } from './react.js'
-import { vueConfig } from './vue.js'
-import { baseConfig } from './base.js'
-import { FlatESLintConfigItem } from 'eslint-define-config'
+import type { FlatESLintConfig } from 'eslint-define-config'
+import { ignores } from './configs/ignores'
+import { javascript } from './configs/javascript'
+import { comments } from './configs/comments'
+import { imports } from './configs/imports'
+import { unicorn } from './configs/unicorn'
+import { typescriptConfig } from './configs/typescript'
+import { jsoncConfig } from './configs/jsonc'
+import { reactConfig } from './configs/react'
+import { markdownConfig } from './configs/markdown'
+import { sortPackageJson } from './configs/sort'
 
-export const eslintConfig = (...options: (FlatESLintConfigItem|FlatESLintConfigItem[])[]) => {
-  return options.flat()
+const baseConfigs: FlatESLintConfig[] = [
+  ...comments,
+  ...ignores,
+  ...imports,
+  ...javascript,
+  ...unicorn,
+  ...jsoncConfig,
+  ...sortPackageJson,
+]
+
+export function karasu(options?: {
+  typescript?: boolean
+  react?: boolean
+  markdown?: boolean
+}) {
+  const configs = [
+    ...baseConfigs,
+  ]
+  if (options?.typescript !== false) {
+    configs.push(...typescriptConfig)
+  }
+  if (options?.react) {
+    configs.push(...reactConfig)
+  }
+  if (options?.markdown) {
+    configs.push(...markdownConfig)
+  }
+  return configs
 }
 
+export * from './globs'
 export {
-  jsConfig,
-  tsConfig,
-  mdConfig,
-  importConfig,
-  jsonConfig,
-  pkgConfig,
-  nodeConfig,
-  baseConfig,
+  baseConfigs,
+  typescriptConfig,
   reactConfig,
-  vueConfig
+  jsoncConfig,
+  markdownConfig,
 }

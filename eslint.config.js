@@ -1,5 +1,3 @@
-import { baseConfig } from './dist'
+import { karasu } from '@karasushin/eslint-config'
 
-export default [
-  ...baseConfig,
-]
+export default karasu()

@@ -12,28 +12,23 @@ English / [简体中文](./README.zh-CN.md)
 pnpm add -D eslint @karasushin/eslint-config
 ```
 
-Create `eslint.config.js` in your project, then copy the following content into it:
+### Config
+
+Create `eslint.config.js` in your project
 
 ```js
-import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
+import { karasu } from '@karasushin/eslint'
 
-export default [
-  ...baseConfig,
-  ...reactConfig,
-  ...vueConfig
-]
+export default karasu()
 ```
 
-you can add config for React or Vue.
-
+You can also do some configuration
 ```js
-import { baseConfig, reactConfig, vueConfig } from '@karasushin/eslint
-
-export default [
-  ...baseConfig,
-  ...reactConfig,
-  ...vueConfig
-]
+export default karasu({
+  typescript: true, // default true
+  react: true, // default false
+  markdown: true, // default false
+})
 ```
 
 ### Add lint script
@@ -48,18 +43,25 @@ add the following content into `package.json`
 }
 ```
 
-### Config WebStorm auto fix
-1. `Preferences` > `Languages & Frameworks` > `JavaScript` > `Code Quality Tools` > `ESLint`
-2. check the `Run eslint --fix on save`
-
-### Config VSCode auto fix
+### Config VSCode
 edit the `settings.json`
 ```json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.organizeImports": "never"
   },
-  "eslint.format.enable": true,
   "eslint.experimental.useFlatConfig": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc"
+    "markdown",
+    "typescript",
+    "typescriptreact",
+  ]
 }
 ```
