@@ -13,7 +13,6 @@ const stylisticRules: Partial<Rules> = {
   '@stylistic/jsx/jsx-equals-spacing': 'error',
   '@stylistic/jsx/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
   '@stylistic/jsx/jsx-indent': ['error', 2],
-  '@stylistic/jsx/jsx-indent-props': ['error', 2],
   '@stylistic/jsx/jsx-one-expression-per-line': 'error',
   '@stylistic/jsx/jsx-props-no-multi-spaces': 'error',
   '@stylistic/jsx/jsx-sort-props': 'error',
