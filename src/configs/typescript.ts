@@ -107,7 +107,6 @@ export const typescriptConfig: FlatESLintConfig[] = [{
     '@typescript-eslint/no-dupe-class-members': 'error',
     '@typescript-eslint/no-duplicate-enum-values': 'error',
     '@typescript-eslint/no-dynamic-delete': 'error',
-    '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-extra-non-null-assertion': 'error',
     '@typescript-eslint/no-extraneous-class': 'error',
     '@typescript-eslint/no-invalid-void-type': 'error',
