@@ -220,7 +220,7 @@ export const javascript: FlatESLintConfig[] = [{
     'no-useless-escape': 'error',
     'no-useless-rename': 'error',
     'no-useless-return': 'error',
-    'no-var': 'warn',
+    'no-var': 'error',
     'no-void': 'error',
     'no-with': 'error',
     'object-shorthand': ['error', 'always', { avoidQuotes: true, ignoreConstructors: false }],
