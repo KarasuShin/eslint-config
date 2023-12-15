@@ -4,7 +4,6 @@ import { GLOB_JSX, GLOB_TSX } from '../globs'
 
 const stylisticRules: Partial<Rules> = {
   '@stylistic/jsx/jsx-closing-bracket-location': 'error',
-  '@stylistic/jsx/jsx-closing-tag-location': 'error',
   '@stylistic/jsx/jsx-curly-brace-presence': ['error', {
     children: 'ignore',
     props: 'ignore',
