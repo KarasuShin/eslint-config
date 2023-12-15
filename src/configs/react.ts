@@ -3,22 +3,22 @@ import { pluginReact, pluginReactHooks, pluginReactRefresh, pluginStylisticJSX }
 import { GLOB_JSX, GLOB_TSX } from '../globs'
 
 const stylisticRules: Partial<Rules> = {
-  '@stylistic/jsx-closing-bracket-location': 'error',
-  '@stylistic/jsx-closing-tag-location': 'error',
-  '@stylistic/jsx-curly-brace-presence': ['error', {
+  '@stylistic/jsx/jsx-closing-bracket-location': 'error',
+  '@stylistic/jsx/jsx-closing-tag-location': 'error',
+  '@stylistic/jsx/jsx-curly-brace-presence': ['error', {
     children: 'ignore',
     props: 'ignore',
     propElementValues: 'always',
   }],
-  '@stylistic/jsx-curly-spacing': 'error',
-  '@stylistic/jsx-equals-spacing': 'error',
-  '@stylistic/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
-  '@stylistic/jsx-indent': ['error', 2],
-  '@stylistic/jsx-indent-props': ['error', 2],
-  '@stylistic/jsx-one-expression-per-line': 'error',
-  '@stylistic/jsx-props-no-multi-spaces': 'error',
-  '@stylistic/jsx-sort-props': 'error',
-  '@stylistic/jsx-tag-spacing': ['error', {
+  '@stylistic/jsx/jsx-curly-spacing': 'error',
+  '@stylistic/jsx/jsx-equals-spacing': 'error',
+  '@stylistic/jsx/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
+  '@stylistic/jsx/jsx-indent': ['error', 2],
+  '@stylistic/jsx/jsx-indent-props': ['error', 2],
+  '@stylistic/jsx/jsx-one-expression-per-line': 'error',
+  '@stylistic/jsx/jsx-props-no-multi-spaces': 'error',
+  '@stylistic/jsx/jsx-sort-props': 'error',
+  '@stylistic/jsx/jsx-tag-spacing': ['error', {
     afterOpening: 'never',
     beforeClosing: 'never',
     beforeSelfClosing: 'proportional-always',
