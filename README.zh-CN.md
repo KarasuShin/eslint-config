@@ -12,7 +12,7 @@
 pnpm add -D eslint @karasushin/eslint-config
 ```
 
-### Config
+### 配置
 
 在你的项目下创建一个 `eslint.config.js`
 
