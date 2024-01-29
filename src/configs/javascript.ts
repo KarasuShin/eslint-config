@@ -144,7 +144,6 @@ export const javascript: FlatESLintConfig[] = [{
     'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
-    'no-duplicate-imports': 'error',
     'no-else-return': 'error',
     'no-empty': ['error', { allowEmptyCatch: true }],
     'no-empty-character-class': 'error',
