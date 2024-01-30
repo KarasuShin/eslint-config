@@ -1,6 +1,6 @@
 {
   "name": "@karasushin/eslint-config",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "packageManager": "pnpm@8.15.0",
   "type": "module",
   "license": "MIT",
