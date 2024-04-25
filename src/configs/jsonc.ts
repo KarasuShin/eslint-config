@@ -9,7 +9,7 @@ export const jsoncConfig: FlatESLintConfig[] = [{
     parser: parserJsonc,
   },
   plugins: {
-    jsonc: pluginJsonc,
+    jsonc: pluginJsonc as any,
   },
   rules: {
     'jsonc/array-bracket-spacing': ['error', 'never'],
