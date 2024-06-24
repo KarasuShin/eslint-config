@@ -1,6 +1,6 @@
 {
   "name": "@karasushin/eslint-config",
-  "version": "2.0.11",
+  "version": "2.1.0",
   "type": "module",
   "license": "MIT",
   "homepage": "https://github.com/KarasuShin/eslint-config#readme",
