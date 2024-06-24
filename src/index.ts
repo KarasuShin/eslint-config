@@ -1,4 +1,4 @@
-import type { FlatESLintConfig } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 import { ignores } from './configs/ignores'
 import { javascript } from './configs/javascript'
 import { comments } from './configs/comments'
@@ -10,6 +10,13 @@ import { reactConfig } from './configs/react'
 import { markdownConfig } from './configs/markdown'
 import { sortPackageJson } from './configs/sort'
 
+interface Options {
+  typescript?: boolean
+  react?: boolean
+  markdown?: boolean
+  rules?: Partial<Rules>
+}
+
 const baseConfigs: FlatESLintConfig[] = [
   ...comments,
   ...ignores,
@@ -20,21 +27,21 @@ const baseConfigs: FlatESLintConfig[] = [
   ...sortPackageJson,
 ]
 
-export function karasu(options?: {
-  typescript?: boolean
-  react?: boolean
-  markdown?: boolean
-}) {
+export function karasu({
+  typescript = true,
+  react = false,
+  markdown = false,
+}: Options) {
   const configs = [
     ...baseConfigs,
   ]
-  if (options?.typescript !== false) {
+  if (typescript) {
     configs.push(...typescriptConfig)
   }
-  if (options?.react) {
+  if (react) {
     configs.push(...reactConfig)
   }
-  if (options?.markdown) {
+  if (markdown) {
     configs.push(...markdownConfig)
   }
   return configs
